@@ -5,17 +5,13 @@ var endScreen = document.getElementById("end-screen")
 var startScreen = document.getElementById("start-screen")
 var questionScreen = document.getElementById("questions")
 
-//var timeRemaining = 0
-var interval;
-var score;
-var answer;
 
 function startQuiz(){
         startScreen.style.display="none";
-        questionScreen.style.display = "block";
         timeDisplay.textContent=60;
         quizTimer();
-
+        showQuestions();
+        createQuestions();
 }
 
 function quizTimer(){
@@ -23,11 +19,15 @@ function quizTimer(){
     timeDisplay.textContent--;
     if (parseInt(timeDisplay.textContent) === 0) {
         clearInterval(interval);
-        endQuiz();
+        questionQuiz();
     }
     } ,1000)
 }
 
+function showQuestions(){
+  questionScreen.className = "start"
+
+}
 
 
 

@@ -1,5 +1,4 @@
-
-var Questions = [
+const  Questions = [
     {
       question: "Who is Michael Scott played by?",
       answers: {
